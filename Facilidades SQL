@@ -1,0 +1,6 @@
+-- Código abaixo para travar Mês em uma consulta no SQL sem que um relatório fique andando conforme o passar dos dias 
+
+AND a.DataPagamento >= DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 2, 0) --Trava de -2 mesês e todos adiante...
+AND a.DataPagamento <= DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0) --Trava para o Mês e voltando para traz...
+
+Ou seja essas duas linhas de código query trava para dois mesês atraz.
